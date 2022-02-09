@@ -1,3 +1,52 @@
+@font-face {
+  font-family: "FuturaBookC";
+  src: url("../fonts/futurabookc.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/futurabookc.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/futurabookc.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/futurabookc.woff") format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/futurabookc.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/futurabookc.svg#futurabookc")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+  font-family: "FuturaMediumC";
+  src: url("../fonts/futuramediumc.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/futuramediumc.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/futuramediumc.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/futuramediumc.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/futuramediumc.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/futuramediumc.svg#futuramediumc")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+  font-family: "Proxima Nova Regular";
+  src: url("../fonts/proxima_nova_regular.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/proxima_nova_regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/proxima_nova_regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/proxima_nova_regular.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/proxima_nova_regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/proxima_nova_regular.svg#proxima_nova_regular")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+}
+@font-face {
+  font-family: "FuturaDemiC";
+  src: url("../fonts/futurademic.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/futurademic.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/futurademic.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/futurademic.woff") format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/futurademic.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/futurademic.svg#futurademic")
+      format("svg"); /* Chrome < 4, Legacy iOS */
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,7 +56,7 @@
 body {
   font-size: 20px;
   color: #363636;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "FuturaBookC";
   width: 100%;
   max-width: 1440px;
   background: #ffffff;
@@ -24,6 +73,14 @@ h3 {
   text-transform: uppercase;
   color: #181818;
 }
+hr {
+  width: 55px;
+  size: 2px;
+  background: #e3b873;
+  text-align: right;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
 .icon {
   margin-top: 12px;
   margin-bottom: 24px;
@@ -32,6 +89,7 @@ h3 {
   object-fit: contain;
 }
 .button {
+  font-family: "FuturaDemiC";
   font-size: 13px;
   line-height: 15px;
   text-align: center;
@@ -57,6 +115,8 @@ header {
   align-items: center;
 }
 .header__logo {
+  width: 14.5%;
+  font-family: "FuturaDemiC";
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
@@ -66,7 +126,7 @@ header {
 /* Navi */
 
 .header__nav {
-  width: 581px;
+  width: 46.5%;
 }
 .header__nav_links {
   display: flex;
@@ -81,7 +141,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   column-gap: 45px;
 }
 .contacts button {
@@ -89,6 +149,8 @@ header {
   height: 37px;
 }
 .contacts span {
+  min-width: 126px;
+  font-family: "FuturaDemiC";
   font-size: 14px;
   line-height: 16px;
   text-align: right;
@@ -108,6 +170,7 @@ header {
   width: 82px;
 }
 .turnkey aside a {
+  font-family: "FuturaDemiC";
   font-size: 14px;
   line-height: 16px;
   text-align: center;
@@ -188,6 +251,7 @@ header {
   background: #131313;
 }
 .completed-projects__names {
+  padding-right: 15.3%;
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
@@ -202,6 +266,28 @@ header {
   line-height: 19px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.3);
+  padding-bottom: 7px;
+  position: relative;
+}
+.completed-projects__names li:hover {
+  color: #e3b873;
+}
+/* !!! */
+.completed-projects__names li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  background: none repeat scroll 0 0 transparent;
+  height: 1px;
+  width: 0;
+  background: #e3b873;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.completed-projects__names li:hover::after {
+  width: 100%;
+  left: 0;
 }
 .completed-projects__example {
   display: flex;
@@ -235,7 +321,7 @@ header {
   row-gap: 34px;
 }
 .completed-projects__example article ul {
-  width: calc(100% / 2);
+  width: 40%;
 }
 .completed-projects__example article ul li:first-child {
   font-family: "Yeseva One", cursive;
@@ -285,44 +371,48 @@ header {
   width: 817px;
   height: 434px;
   object-fit: cover;
+  overflow: hidden;
+  margin-bottom: 62px;
 }
 
 /* Section repair types */
 
 .repair-types {
   padding: 36.8% 5.7% 9%;
-  background: #f1ebeb;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
   background: #f1ebeb;
 }
 .repair-types__form {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 147px;
   gap: 35px;
 }
 .repair-types__form div {
-  width: 231px;
+  max-width: 231px;
 }
 .repair-types__form div label {
+  display: block;
   font-size: 15px;
   line-height: 20px;
   color: rgba(54, 54, 54, 0.5);
 }
 .repair-types__form div input {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding: 7px;
+  padding-left: 0;
   border: none;
   border-bottom: 1px solid rgba(54, 54, 54, 0.3);
+  font-family: "FuturaBookC";
   font-size: 18px;
   line-height: 24px;
   color: #363636;
+  outline: none;
 }
 .repair-types__form button {
+  align-self: flex-end;
   width: 200px;
   height: 51px;
   font-size: 15px;
@@ -334,57 +424,50 @@ header {
   line-height: 22px;
   color: #181818;
 }
-.repair-types__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.repair-types img {
-  margin-bottom: 31px;
-}
 .repair-types__items {
-  position: absolute;
-  top: 340px;
   display: flex;
   justify-content: space-between;
   column-gap: 30px;
 }
 .repair-types__item {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.repair-types__item img {
-  position: relative;
-  z-index: 1;
-}
-.repair-types__item ul {
+.repair-types__item_info {
+  position: absolute;
+  top: 294px;
+  z-index: 2;
   min-width: 330px;
   padding: 25px 29px 49px 34px;
-  position: absolute;
-  z-index: 2;
-  top: 294px;
-  left: 31px;
   background: #ffffff;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
 }
-.repair-types__item ul span {
+.repair-types__item_info span {
   font-family: "Yeseva One", cursive;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
   color: #363636;
+  margin-bottom: 13px;
 }
-.repair-types__item ul li {
+.repair-types__item_info ul {
+  list-style-position: inside;
+}
+.repair-types__item_info ul li {
   font-size: 15px;
   line-height: 25px;
   color: #959595;
 }
-.repair-types__item ul button {
+.repair-types__item_info div {
+  padding: 16px;
   position: absolute;
   z-index: 3;
-  bottom: -28px;
+  bottom: -26px;
   left: 0px;
-  width: 225px;
+  width: 228px;
   height: 54px;
   font-family: "Yeseva One", cursive;
   font-style: normal;
@@ -392,6 +475,7 @@ header {
   font-size: 18px;
   line-height: 25px;
   text-transform: uppercase;
+  text-align: center;
   color: #ffffff;
   background: #e3b873;
   box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
@@ -414,12 +498,13 @@ header {
 }
 .request__procedure {
   min-height: 691px;
-  width: 779px;
+  min-width: 779px;
   background-image: url(../images/circle.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 .request form {
+  margin-left: 54px;
   max-height: 509px;
   max-width: 506px;
   padding: 27px 49px;
@@ -431,6 +516,7 @@ header {
   box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
 }
 .request form h4 {
+  font-family: "FuturaDemiC";
   font-size: 20px;
   line-height: 25px;
   text-align: center;
@@ -448,12 +534,17 @@ header {
 }
 .request form input {
   padding-bottom: 8px;
+  font-family: "FuturaMediumC";
   font-size: 18px;
   line-height: 25px;
   color: #ffffff;
   background: #131313;
   border: none;
   border-bottom: 2px solid rgba(54, 54, 54, 0.3);
+  outline: none;
+}
+.request form input::placeholder {
+  color: #ffffff;
 }
 /* .request form span {
   font-size: 16px;
@@ -472,6 +563,8 @@ header {
   align-items: center;
 }
 .request_strange-pig p {
+  width: 50%;
+  font-family: "FuturaDemiC";
   font-size: 20px;
   line-height: 25px;
   color: #e3b873;
@@ -488,11 +581,13 @@ header {
   display: flex;
   justify-content: space-between;
   column-gap: 189px;
+  position: relative;
 }
 .realization__styles {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 23.5%;
 }
 .realization__styles h2 {
   margin-bottom: 47px;
@@ -505,25 +600,68 @@ header {
   color: #e3b873;
   white-space: pre-line;
 }
+.realization__styles ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
 .realization__styles ul li {
-  margin-bottom: 25px;
-  /* font-family: Proxima Nova; */
+  font-family: "Proxima Nova Regular";
   font-size: 20px;
   line-height: 34px;
   color: #ffffff;
+  padding-bottom: 2px;
+  position: relative;
+}
+/* .realization__styles li:hover {
+  color: #e3b873;
+  display: inline;
+  border-bottom: 1px solid #e3b873;
+} */
+.realization__styles li:hover {
+  color: #e3b873;
+}
+.realization__styles li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  background: none repeat scroll 0 0 transparent;
+  height: 2px;
+  width: 0;
+  background: #e3b873;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+}
+.realization__styles li:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 .realization__items {
+  max-width: 751px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  row-gap: 40px;
   flex-wrap: wrap;
+  position: absolute;
+  z-index: 2;
+  top: -102px;
+  right: 7%;
 }
+
+/* .realization__items img:nth-child(2) {
+  align-self: flex-start;
+}
+.realization__items img:nth-child(3) {
+  align-self: flex-end;
+} */
 
 /* Section design */
 
 .design {
-  padding: 10.5% 7% 22.3%;
+  padding: 10.7% 7% 22.3%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -536,13 +674,19 @@ header {
   line-height: 27px;
   text-align: center;
   color: #363636;
-  margin-bottom: 38px;
+}
+.design-section {
+  position: absolute;
+  bottom: -141px;
+}
+.brightness {
+  filter: brightness(70%);
 }
 
 /* Section steps */
 
 .steps {
-  padding: 29.5% 7% 32%;
+  padding: 29.7% 7% 32%;
   background: #131313;
   display: flex;
   justify-content: space-between;
@@ -555,6 +699,7 @@ header {
   align-self: flex-start;
 }
 .steps__info h5 {
+  font-family: "FuturaDemiC";
   font-size: 15px;
   line-height: 21px;
   text-transform: uppercase;
@@ -598,24 +743,25 @@ header {
   line-height: 25px;
   color: #ffffff;
   margin-bottom: 62px;
-  /* white-space: pre-line; */
 }
 .steps__items {
-  padding-top: 71px;
+  padding-top: 87px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 45px;
+  column-gap: 200px;
   font-size: 15px;
   line-height: 18px;
   color: #ffffff;
   margin-bottom: 54px;
 }
 .steps__item {
-  width: 30%;
-  white-space: pre-line;
+  width: 15%;
 }
 .steps__item div {
+  margin-bottom: 17px;
+  width: 20px;
   font-family: "Yeseva One", cursive;
   font-style: normal;
   font-weight: normal;
@@ -752,6 +898,8 @@ header {
   position: relative;
   z-index: 1;
   padding: 13px 32px 85px 20px;
+  background: #ffffff;
+  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
 }
 .clients__item_info {
   display: flex;
@@ -871,6 +1019,7 @@ header {
   margin-bottom: 7px;
 }
 .question-form__fields input {
+  font-family: "FuturaBookC";
   padding-bottom: 8px;
   min-width: 231px;
   width: 100%;
@@ -880,6 +1029,10 @@ header {
   background: #181818;
   border: none;
   border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+.question-form__fields input::placeholder {
+  color: #ffffff;
 }
 .question-form form button {
   margin-top: 50px;
@@ -895,7 +1048,7 @@ header {
   padding: 20% 18% 7%;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   /* background-image: url(./images/gray.png);
   background-size: cover;
   background-repeat: no-repeat; */
@@ -908,6 +1061,7 @@ header {
 .location h3 {
   color: #e3b873;
   margin-bottom: 26px;
+  width: 60%;
 }
 .location__web {
   display: flex;
