@@ -85,8 +85,12 @@
                 <li>Upon request</li>
               </ul>
             </div>
+            <img src="./assets/images/sl_arrows.svg" alt="arrows"/>
           </article>
-          <img src="./assets/images/project1.png" />
+        <div class="completed-projects__example_slaider">
+          <div class="completed-projects__example_slaider_item"></div>
+          <div class="completed-projects__example_slaider_item"></div>
+        </div>
         </div>
       </section>
       <section class="control">
@@ -97,11 +101,8 @@
             src="./assets/images/camera.svg"
             alt="camera"
           />
-          <img
-            class="control__content_video"
-            src="./assets/images/video.png"
-            alt="video"
-          />
+          <div
+            class="control__content_video"></div>
           <hr>
           <p class="control__closing-p">
             At each facility, a camera is installed that broadcasts the progress
@@ -123,8 +124,11 @@
             <input id="phone" type="phone" placeholder="Your phone number:" />
           </div>
           <button class="button" type="submit">Submit</button>
-          <!-- <span>I agree to the processing of personal data</span> -->
         </form>
+        <div class="repair-types__agree-checkbox">
+        <input type="checkbox" class="agree-checkbox" id="agree-repair" name="agree" value="yes">
+        <label for="agree-repair">I agree to the processing of personal data</label>
+      </div>
         <h3>TYPES OF REPAIR</h3>
         <img class="icon" src="./assets/images/tools.svg" alt="tools" />
         <div class="repair-types__items">
@@ -180,7 +184,9 @@
       </section>
       <section class="request">
         <div class="request__content">
-          <div class="request__procedure"></div>
+          <div class="request__procedure">
+            <img src="./assets/images/circle.png" alt="procedure"/>
+          </div>
           <form>
             <h4>Leave a request for free departure of the measurer</h4>
             <div>
@@ -195,7 +201,10 @@
               <label for="email">Email</label>
               <input id="email" type="email" placeholder="Your email" />
             </div>
-            <!-- <span>I agree to the processing of personal data</span> -->
+            <div class="request__agree-checkbox">
+              <input type="checkbox" class="agree-checkbox" id="agree-request" name="agree" value="yes">
+              <label class="label" for="agree-request">I agree to the processing of personal data</label>
+            </div>
             <button class="button" type="submit">Call the measurer</button>
           </form>
         </div>
@@ -304,7 +313,7 @@
           </p>
           <!-- <div>slaider</div> -->
         </article>
-        <div>
+        <div class="steps__content">
           <div class="steps__items">
             <div class="steps__item">
               <div>01</div>
@@ -331,7 +340,9 @@
               <span>Приемка-сдача работ</span>
             </div>
           </div>
-          <div class="steps__img"></div>
+          <div class="steps__img">
+            <img src="./assets/images/steps.png" alt="steps" />
+          </div>
         </div>
       </section>
       <section class="team">
@@ -474,7 +485,10 @@
               <label for="question">Question</label>
               <input id="question" type="text" placeholder="I want to know:" />
             </div>
-            <!-- <span>I agree to the processing of personal data</span> -->
+          </div>
+          <div class="question-form__agree-checkbox">
+            <input type="checkbox" class="agree-checkbox" id="agree-question" name="agree" value="yes">
+            <label class="label" for="agree-question">I agree to the processing of personal data</label>
           </div>
           <button class="button" type="submit">Submit</button>
         </form>
@@ -488,7 +502,9 @@
           <img src="./assets/images/mail.png" alt="mail" />
           <img src="./assets/images/insta.png" alt="insta" />
         </div>
-        <img class="location__map" src="./assets/images/map.png" alt="map" />
+        <div class="location__map">
+        <img src="./assets/images/map.png" alt="map" />
+      </div>
       </section>
     </main>
     <footer>
