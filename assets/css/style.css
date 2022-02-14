@@ -53,6 +53,9 @@
   box-sizing: border-box;
   text-decoration: none;
 }
+html {
+  background: #f5f2ea;
+}
 body {
   font-size: 20px;
   color: #363636;
@@ -226,6 +229,12 @@ body {
   font-size: 40px;
   line-height: 53px;
   color: #ffffff;
+  margin-bottom: 20px;
+}
+.colortext {
+  font-size: 40px;
+  line-height: 53px;
+  color: #e3b873;
   margin-bottom: 20px;
 }
 .turnkey__content_txt {
@@ -544,7 +553,7 @@ body {
   box-shadow: 0 0 20px #e3b873;
   border-color: #e3b873;
   background-color: #e3b873;
-  background-image: url("/assets/images/agree.svg");
+  background-image: url(../images/agree.svg);
 }
 /* Section repair types */
 
