@@ -1228,6 +1228,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 @media (max-width: 1200px) {
   .control__closing-p {
     margin-bottom: 72px;
@@ -1378,6 +1379,10 @@ body {
     padding: 13.5% 35% 14.5% 4.2%;
   }
   .turnkey__content h1 {
+    font-size: 23px;
+    line-height: 31px;
+  }
+  .colortext {
     font-size: 23px;
     line-height: 31px;
   }
@@ -1619,6 +1624,10 @@ body {
   }
 }
 @media (max-width: 590px) {
+  .colortext {
+    font-size: 23px;
+    line-height: 31px;
+  }
   .projects__example_slaider-mobile {
     width: 440px;
     height: 300px;
@@ -1648,6 +1657,10 @@ body {
   }
   .turnkey__content {
     padding: 23% 5% 16%;
+  }
+  .colortext {
+    font-size: 23px;
+    line-height: 31px;
   }
   .projects__example_txt {
     font-size: 18px;
