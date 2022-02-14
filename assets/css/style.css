@@ -48,8 +48,8 @@
 }
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -98,7 +98,7 @@ body {
   text-align: center;
   color: #ffffff;
   background: #e3b873;
-  box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
+  box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
   border-radius: 2px;
   text-transform: uppercase;
   border: none;
@@ -519,7 +519,7 @@ body {
   height: 51px;
   font-size: 15px;
   line-height: 26px;
-  box-shadow: 0px 15px 15px rgba(227, 184, 115, 0.15);
+  box-shadow: 0 15px 15px rgba(227, 184, 115, 0.15);
 }
 .agree-checkbox {
   position: absolute;
@@ -620,7 +620,7 @@ body {
   position: absolute;
   z-index: 3;
   bottom: -7%;
-  left: 0px;
+  left: 0;
   font-size: 18px;
   line-height: 25px;
   text-align: center;
@@ -666,7 +666,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   background: #131313;
-  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.05);
 }
 .measurement__form_title {
   align-self: center;
@@ -723,7 +723,7 @@ body {
   font-family: "FuturaDemiC";
   line-height: 25px;
   color: #e3b873;
-  text-shadow: 0px 3px 10px rgba(227, 184, 115, 0.15);
+  text-shadow: 0 3px 10px rgba(227, 184, 115, 0.15);
 }
 
 /* Section realization */
@@ -988,7 +988,7 @@ body {
   z-index: 2;
   top: 80%;
   background: #ffffff;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 .team__item_name {
@@ -1048,7 +1048,7 @@ body {
   z-index: 1;
   padding: 2% 3% 6.8% 1.5%;
   background: #ffffff;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
 }
 .clients__item_info {
   flex: 1 1 auto;
@@ -1446,7 +1446,7 @@ body {
   }
   .control__content {
     position: relative;
-    top: 0px;
+    top: 0;
   }
   .control__content_video {
     width: 550px;
