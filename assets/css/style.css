@@ -420,17 +420,15 @@ body {
 .projects__example_slaider_item {
   height: 100%;
 }
-.projects__example_slaider_item:first-child {
-  width: 679px;
-  background: url(../images/project1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+.projects__example_slaider_item {
+  display: flex;
+  justify-content: center;
 }
-.projects__example_slaider_item:last-child {
-  width: 145px;
-  background: url(../images/project2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+.projects__example_slaider_item img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 /* Section control */
@@ -456,24 +454,24 @@ body {
 .control__closing-p {
   line-height: 34px;
   width: 53%;
-  margin-bottom: 92px;
+  margin-bottom: 6%;
 }
 .control__content_icon {
   margin-bottom: 31px;
 }
 .control__content_video {
-  cursor: pointer;
-  background: url(../images/video.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 817px;
-  height: 434px;
-  margin-bottom: 4.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+.control__content_video img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
 }
 .control__content_video::after {
   content: url(../images/play.svg);
@@ -489,7 +487,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 37px;
+  margin-bottom: 2%;
   gap: 35px;
 }
 .control__form_field {
@@ -739,7 +737,8 @@ body {
   position: relative;
 }
 .realization__styles {
-  flex: 2 1 23.5%;
+  flex: 2 1 auto;
+  padding-right: 67%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1211,6 +1210,10 @@ body {
   cursor: pointer;
   opacity: 0.5;
 }
+.location__map {
+  display: flex;
+  justify-content: center;
+}
 .location__map img {
   cursor: pointer;
   width: 100%;
@@ -1231,7 +1234,7 @@ body {
 
 @media (max-width: 1200px) {
   .control__closing-p {
-    margin-bottom: 72px;
+    margin-bottom: 2%;
   }
   .repair-types__item_price {
     padding: 3%;
@@ -1425,17 +1428,20 @@ body {
   .projects__example_desc {
     margin-bottom: 0;
   }
-  .projects__example_article img {
+  .projects__example_sl-arrows {
     display: none;
   }
   .projects__example_slaider-mobile {
-    display: block;
-    width: 550px;
-    height: 380px;
-    margin-bottom: 36px;
-    background-image: url(../images/project_mobile.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .projects__example_slaider-mobile img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    object-fit: cover;
   }
   .projects__example_slaider {
     display: none;
@@ -1447,10 +1453,6 @@ body {
   .control__content {
     position: relative;
     top: 0;
-  }
-  .control__content_video {
-    width: 550px;
-    height: 300px;
   }
   .control__closing-p {
     color: #ffffff;
@@ -1520,6 +1522,9 @@ body {
     background: #ffffff;
     position: relative;
   }
+  .realization__styles {
+    padding: 0;
+  }
   .realization__styles_title {
     font-size: 22px;
     line-height: 30px;
@@ -1533,13 +1538,14 @@ body {
     position: absolute;
     z-index: 2;
     top: 100px;
-    width: 550px;
-    height: 300px;
+    width: 100%;
+    height: auto;
+    padding: 0 10%;
   }
   .realization__items_mobile img {
     cursor: pointer;
     width: 100%;
-    height: 100%;
+    height: auto;
     overflow: hidden;
     object-fit: cover;
   }
@@ -1547,7 +1553,7 @@ body {
     display: none;
   }
   .design {
-    padding: 220px 18px;
+    padding: 35% 18px;
     background: #252525;
   }
   .design__title {
@@ -1628,18 +1634,6 @@ body {
     font-size: 23px;
     line-height: 31px;
   }
-  .projects__example_slaider-mobile {
-    width: 440px;
-    height: 300px;
-  }
-  .control__content_video {
-    width: 440px;
-    height: 300px;
-  }
-  .realization__items_mobile {
-    width: 440px;
-    top: 120px;
-  }
 }
 @media (max-width: 480px) {
   .primary-txt {
@@ -1670,14 +1664,6 @@ body {
     font-size: 14px;
     line-height: 19px;
   }
-  .projects__example_slaider-mobile {
-    width: 335px;
-    height: 242px;
-  }
-  .control__content_video {
-    width: 335px;
-    height: 207px;
-  }
   .control__content_video::after {
     display: none;
   }
@@ -1694,17 +1680,6 @@ body {
     width: 270px;
     top: 50%;
   }
-  .realization {
-    padding-bottom: 145px;
-  }
-  .realization__items_mobile {
-    width: 335px;
-    height: 242px;
-    top: 80px;
-  }
-  .design {
-    padding: 175px 18px;
-  }
   .questions__form {
     max-width: 100%;
   }
@@ -1717,16 +1692,6 @@ body {
   }
 }
 @media (max-width: 375px) {
-  .control__content_video {
-    width: 320px;
-    height: 250px;
-  }
-  .realization__items_mobile {
-    width: 320px;
-  }
-  .design {
-    padding-top: 100px;
-  }
   .footer {
     display: none;
   }
