@@ -143,8 +143,11 @@ const dateObj = {
     let dateFromNow
 
     const reg = /^(1[0-9]|0[1-9])(0[1-9]|1[0-2])([1-2]\d{2}[0-9])$/g
+    const regHyphen = /MM-DD-YYYY/
+    const regFrom = /YYYY-MM-DD/
+    const regRevert = /YYYYMMDD$/
 
-    if (str.includes('MM-DD-YYYY') && str.includes('YYYYMMDD')) {
+    if (regHyphen.test(str)) {
       this.day = str.slice(6, 8)
       this.month = str.slice(4, 6)
       this.year = str.slice(0, 4)
@@ -152,7 +155,11 @@ const dateObj = {
       this.dateArray.push(this.day, this.month, this.year)
 
       dateWithHyphenRevert = this.dateArray.join('-')
-    } else if (str.includes('YYYYMMDD')) {
+      formatedDateHyphenRevert.textContent = dateWithHyphenRevert
+      setTimeout(() => {
+        formatedDateHyphenRevert.textContent = ''
+      }, 3000)
+    } else if (regRevert.test(str)) {
       this.day = str.slice(6, 8)
       this.month = str.slice(4, 6)
       this.year = str.slice(0, 4)
@@ -165,7 +172,11 @@ const dateObj = {
         month: 'long',
         year: 'numeric',
       })
-    } else if (str.includes('-') && str.includes('YYYY-MM-DD')) {
+      formatedDateRevert.textContent = revertedDate
+      setTimeout(() => {
+        formatedDateRevert.textContent = ''
+      }, 3000)
+    } else if (regFrom.test(str)) {
       const arr = str.split(/[-,]+/)
 
       this.day = arr[2]
@@ -176,6 +187,10 @@ const dateObj = {
       const currentDate = new Date()
 
       dateFromNow = Math.round((currentDate - dateFromInput) / 31536000000)
+      formatedDateFromNow.textContent = `${dateFromNow} years ago`
+      setTimeout(() => {
+        formatedDateFromNow.textContent = ''
+      }, 3000)
     } else if (reg.test(str)) {
       this.day = str.slice(0, 2)
       this.month = str.slice(2, 4)
@@ -191,12 +206,13 @@ const dateObj = {
         month: 'long',
         year: 'numeric',
       })
+      formatedDateMonth.textContent = dateWithMonth
+      formatedDateHyphen.textContent = dateWithHyphen
+      setTimeout(() => {
+        formatedDateMonth.textContent = ''
+        formatedDateHyphen.textContent = ''
+      }, 3000)
     }
-    formatedDateHyphen.textContent = dateWithHyphen
-    formatedDateMonth.textContent = dateWithMonth
-    formatedDateRevert.textContent = revertedDate
-    formatedDateHyphenRevert.textContent = dateWithHyphenRevert
-    formatedDateFromNow.textContent = `${dateFromNow} years ago`
   },
 }
 dateToFormat.addEventListener('change', (event) => {
@@ -270,11 +286,6 @@ const objCalc = {
 document.querySelector('.keyboard').addEventListener('click', (event) => {
   event.preventDefault()
   objCalc.calcFunc(event.target.value)
-})
-
-document.addEventListener('keydown', (event) => {
-  if (event.key.match(/[0-9%\/*\-+\(\)=]|Backspace|Enter/))
-    objCalc.calcFunc(event.key)
 })
 
 // Array Sorter
