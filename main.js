@@ -151,7 +151,7 @@ const dateObj = {
       this.day = str.slice(6, 8)
       this.month = str.slice(4, 6)
       this.year = str.slice(0, 4)
-
+      this.dateArray.length = 0
       this.dateArray.push(this.day, this.month, this.year)
 
       dateWithHyphenRevert = this.dateArray.join('-')
@@ -164,6 +164,7 @@ const dateObj = {
       this.month = str.slice(4, 6)
       this.year = str.slice(0, 4)
 
+      this.dateArray.length = 0
       this.dateArray.push(this.day, this.month, this.year)
 
       const date = new Date(this.year, +this.month - 1, this.day)
@@ -196,6 +197,7 @@ const dateObj = {
       this.month = str.slice(2, 4)
       this.year = str.slice(4)
 
+      this.dateArray.length = 0
       this.dateArray.push(this.day, this.month, this.year)
 
       dateWithHyphen = this.dateArray.join('-')
@@ -415,7 +417,7 @@ numberToConvert.addEventListener('change', (event) => {
   convertObj.convertFunc(event.target.value)
 })
 
-// //  Caching calculator
+//  Caching calculator
 
 // const numberForCacheCalc = document.querySelector('#cache-calc')
 // let cacheCalcResult = document.querySelector('#cache-calc-result')
